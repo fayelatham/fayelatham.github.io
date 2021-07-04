@@ -1,0 +1,10 @@
+- name: HOME
+  link: /
+- name: ABOUT
+  link: /about
+- name: WORK
+  subfolderitems:
+    - name: Written
+      link: /poetry/written
+    - name: Visual
+      link: /poetry/visual
