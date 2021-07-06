@@ -5,6 +5,6 @@
 - name: WORK
   subfolderitems:
     - name: Written
-      link: /poetry/written
+      link: /poetry/
     - name: Visual
-      link: /poetry/visual
+      link: /visual-poetry

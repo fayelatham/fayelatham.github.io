@@ -1,20 +1,18 @@
 ---
 layout: default
 ---
-<div class="uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+<div class="uk-visible-toggle uk-light" tabindex="-1" uk-slider> 
     <ul class="uk-slider-items uk-padding-large uk-grid">
-        {% for image in site.static_files %}
-            {% if image.path contains 'img/homeslides' %}
+        {% for image in site.data.homeslides %}
             <li>
                 <div class="uk-width-auto uk-panel uk-transition-toggle" class="uk-background-cover">
-                    <img class="uk-height-max-medium" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    <img class="uk-height-max-large" src="{{ image.image-url }}" alt="image" />
                     <div class="uk-position-center uk-text-center uk-transition-fade">
-                        <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <h2><a class="uk-link-heading" href="{{ image.link }}">{{ image.name }}</a></h2>
+                        <p>{{ image.description }}</p>
                     </div>
                 </div>
             </li>
-            {% endif %}
         {% endfor %}
     </ul>
 </div>

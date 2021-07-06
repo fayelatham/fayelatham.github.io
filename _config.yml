@@ -32,6 +32,16 @@ twitter_username: lathamfaye
 plugins:
   - jekyll-feed
 
+collections:
+  # Collection for written poetry
+  poetry:
+    output: true
+    permalink: /poetry/:name
+  # Collection for visual poetry
+  visual-poetry:
+    output: true
+    permalink: /visual-poetry/:name
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

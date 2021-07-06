@@ -1,0 +1,17 @@
+---
+layout: container
+---
+<div class="uk-padding uk-padding-remove-horizontal">
+<div uk-grid class="uk-child-width-1-2@m">
+    <div>
+        <h2>{{ page.title }}</h2>
+        <div class="uk-text-meta">{{ page.date }}</div>
+        <div class="uk-padding uk-padding-remove-horizontal">
+            {{ content }}
+        </div>
+    </div>
+    <div>
+        <img width="uk-width-expand" src="{{ page.image-url }}"/>
+    </div>
+</div>
+</div>

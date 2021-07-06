@@ -1,0 +1,24 @@
+---
+layout: container
+---
+<div uk-grid class="uk-flex-center">
+    <div class="uk-width-1-3@l">
+        <h2>Poetry</h2>
+        <ul>
+            {% for poem in site.poetry %}
+            <li>{{ poem.title}} - <a href="{{ poem.url }}">Read</a></li>
+            {% endfor %}
+        </ul>   
+    </div>
+    <div class="uk-flex-last@l uk-width-expand@l">
+        <h2>About</h2>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut tempus diam, eu iaculis odio. In accumsan pharetra est vel luctus. Suspendisse lobortis nunc vitae nisi dignissim, ut cursus mi finibus. Nulla in est nunc. Proin in justo et odio pretium mattis sed eu justo. In hac habitasse platea dictumst. Vestibulum suscipit tellus ac elit gravida suscipit. Nulla ullamcorper arcu malesuada cursus placerat. Suspendisse vitae est eu nisl sollicitudin vulputate. Sed convallis lacinia purus. Curabitur non consectetur est. Praesent vitae scelerisque mi. Ut sagittis lorem in leo porttitor vehicula.
+            </p>
+            <p>
+                In hac habitasse platea dictumst. Quisque sollicitudin odio vel consectetur ultrices. Integer posuere ornare ligula sed suscipit. Cras convallis rhoncus ex quis maximus. Sed venenatis lacus eget eros fringilla accumsan. Donec lacinia sem ac convallis ultricies. Morbi varius aliquet ex, eget pretium metus volutpat in. In hac habitasse platea dictumst.
+            </p>
+        </div>
+    </div>
+</div>
