@@ -8,7 +8,7 @@ layout: container
         <li>
                 <a class="uk-link-text" href="{{ poem.url }}"><strong><i style="margin-right: 0.5em">{{ poem.title }}</i></strong></a>
                 <span class="uk-text-meta">
-                    {% render "published", poem:poem}
+                    {% include published.html date=poem.date publisher=poem.publisher %}
                 </span>
         </li>
     {% endfor %}

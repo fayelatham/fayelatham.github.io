@@ -29,8 +29,8 @@ twitter_username: lathamfaye
 
 # Build settings
 # theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+  # - jekyll-feed
 
 collections:
   # Collection for written poetry
