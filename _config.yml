@@ -37,10 +37,13 @@ collections:
   poetry:
     output: true
     permalink: /poetry/:name
+    publisher: null
+    
   # Collection for visual poetry
   visual-poetry:
     output: true
     permalink: /visual-poetry/:name
+    publisher: null
 
 # Exclude from processing.
 # The following items will not be processed, by default.

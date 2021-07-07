@@ -1,0 +1,5 @@
+{% if poem.publisher %}
+    Published by {{ poem.publisher }} ({{ poem.date | date: "%Y" }})    
+{% else %}
+    Unpublished ({{ poem.date | date: "%Y"}})
+{% endif %} 

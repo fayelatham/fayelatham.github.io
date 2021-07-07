@@ -1,0 +1,12 @@
+---
+layout: container
+---
+<h2>Publications</h2>
+<ul class="uk-list">
+    {% for publication in site.data.publications %}
+        <li>
+                <strong><i style="margin-right: 0.5em">{{ publication.title }}</i></strong>
+                <span class="uk-text-meta">{{ publication.publisher }} ({{ publication.year }})</span> 
+        </li>
+    {% endfor %}
+</ul>

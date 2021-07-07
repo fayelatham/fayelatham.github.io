@@ -2,19 +2,11 @@
   description: Find out what inspires me to write
   image-url: /assets/img/homeslides/runningcuilin.JPG
   link: /about
-- name: Lumin
-  description: Brocken Spectres and other poetry
-  image-url: /assets/img/homeslides/slide1.png
-  link: /poetry/lumin-2020
-- name: British Mountaineers
-  description: Visual poetry with mountaineering texts
-  image-url: /assets/img/homeslides/slide2.png
-  link: /visual-poetry/british-mountaineers
 - name: Poetry
-  description: Typewritten poetry
+  description: Traditional written poetry
   image-url: /assets/img/homeslides/slide3.png
   link: /poetry
-- name: Work
-  description: Published and previews of my work
-  image-url: /assets/img/homeslides/slide4.png
+- name: Visual Poetry
+  description: Experimental visual work
+  image-url: /assets/img/homeslides/page-38.jpg
   link: /visual-poetry

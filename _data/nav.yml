@@ -1,10 +1,14 @@
 - name: HOME
   link: /
 - name: ABOUT
-  link: /about
+  subfolderitems:
+    - name: Biography
+      link: /about
+    - name: Publications
+      link: /publications
 - name: WORK
   subfolderitems:
     - name: Written
-      link: /poetry/
+      link: /poetry
     - name: Visual
       link: /visual-poetry

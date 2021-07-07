@@ -1,5 +1,9 @@
 ---
-layout: container
+layout: page
 ---
-<h2>{{ page.title }}</h2>
-{{ content }}
+<span class="uk-text-meta">
+    {% render "published", poem: page %}
+</span>
+<div class="uk-padding uk-padding-remove-horizontal">
+    {{content}}
+</div>
