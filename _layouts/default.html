@@ -1,20 +1,38 @@
 <!doctype HTML>
 <html class="no-js" lang="">
 <head>
-  {% include header.html %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faye Latham</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css"/>
 </head>
 <body>
-    <div class="uk-container uk-padding uk-padding-remove-top">
-        <h3 class="uk-padding uk-padding-remove-bottom uk-flex uk-flex-middle uk-flex-center">Faye Latham</h3>
-        <!-- <hr/> -->
-        <div class="uk-flex uk-flex-center">
-            {% include navbar.html %}
-        </div>
-        <!-- <hr/> -->
+    <div class="container">
+    <header>
+        {% include navbar.html %}
+    </header>
+    <div class="row">
+        <h1>{{ page.title }}</h1>
     </div>
     {{ content }}
-    <div class="uk-container">
-        {% include footer.html %}
+    <footer>
+        <div class="footer mt-4">
+            <section>
+                <h6>Copyright</h6>
+                <p class="ms-3">
+                    Faye Rhiannon Latham &copy; 2024<br/>
+                    <small>Web design by <a class="text-reset" href="https://jonohawkins.co.uk">Jono Hawkins</a>
+                </p>  
+            </section>
+        </div>
+    </footer>
     </div>
+    <!-- Load JS scripts -->
+    <script src="{{ site.baseurl }}/assets/js/bootstrap/bootstrap.bundle.js"></script>
 </body>
 </html>

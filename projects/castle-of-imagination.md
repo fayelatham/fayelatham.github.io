@@ -1,0 +1,7 @@
+---
+layout: default
+title: Castle of Imagination
+---
+First published in 1930, F. S. Smythe’s book, *A Kangchenjunga Adventure*, becomes the canvas for this series of erasure and collage poems. This series explores both real and imagined landscapes, taking the reader on a journey into the text through visual and lexical portals, black holes and dreams. 
+
+The cutout circles in the first and last poems are taken from photographs of landscapes and figure metaphorically as portals that transport the reader into the erased text. Whilst on one hand they are strange and ethereal, these circles also represent something far more real and frightening. The first circle alludes to the sun or a hole in the ozone, where the words and half-sentences beam down onto the ice. In its original context, the pool of water in the photograph would have been seen as a part of the landscape. However, viewed with modern eyes and in the context of the poem, the ice is threatened by a nightmare sun and the water symbolises a dark truth. The unnamed “something” in the poem becomes a metaphor for climate change which puts the landscape at risk. An unnerving and sinister thread connects these pieces. Alongside romance, dreams and beauty, there is also blood and violence, a constant and underlying threat. The irreversible nature of erasure as a poetic form explores how our imagined landscapes of the future will not be born from creation, but destruction of the world we inhabit.

@@ -1,37 +1,69 @@
-<nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-nav">
-        <ul class="uk-navbar-nav">
-            {% for item in site.data.nav %}
-            {% if item.subfolderitems[0] %} 
-            <li>
-                <a href="#">{{ item.name }}</a>
-                <div class="uk-navbar-dropdown uk-light">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                    {% for subitem in item.subfolderitems %}
-                        <li>
-                            <a href="{{ subitem.link }}">{{ subitem.name }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </li>
-            {% else %}
-            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
-</nav>
 
-<!--
-<a href="#">Menu</a>
-<div class="uk-navbar-dropdown">
-    <ul class="uk-nav uk-navbar-dropdown-nav">
-    {% for item in site.data.nav %}
-        <li class="{% if page.url == item.link %}uk-active{% endif %}">
-            <a href="{{ item.link }}">{{ item.name }}</a>
-        </li>
-    {% endfor %}
-    </ul>
-</div>
--->
+<nav class="navbar navbar-expand-md bg-body-tertiary" style="background-color: #fff !important;">
+    <div class="container m-0 p-0">
+      <a class="header-title navbar-brand" href="{{ site.baseurl }}/">
+        Faye Rhiannon Latham
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-lg-0">
+          <style>
+            .active {
+              font-weight: bold;
+            }
+          </style>
+          {% for item in site.data.nav %}
+  
+          {% if item.type == "submenu" %}
+  
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{site.baseurl}}{{ subitem.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ item.title }}
+            </a>
+            <ul class="dropdown-menu shadow mt-2">
+            {% for subitem in item.pages %}
+            
+              <li class="dropdown-item" {% if page.url == subitem.url %}aria-current="page"{% endif %}><a class="nav-link" href="{{site.baseurl}}{{ subitem.url }}">{{ subitem.title }}</a>
+        
+            {% endfor %}
+            </ul>
+            </li>
+  
+          {% else %}
+          
+            <li class="nav-item" {% if page.url == item.url %}aria-current="page"{% endif %}><a class="nav-link nav-link{% if page.url == item.url %} active{% endif %}" href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
+          
+          {% endif %}
+  
+          <!-- Check if we have a dropdown item -->
+          <!-- SITE: {{ site.baseurl | append: item.url }} -->
+          <!-- PAGE: {{ page.url }} --></li>
+          
+          {% endfor %}  
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  
+
+<!-- {% for item in site.data.nav %}
+
+{% if item.type == "submenu" %}
+
+<a class="nav-link" href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
+
+{% for subitem in item.pages %}
+
+<a class="nav-link ms-3" href="{{site.baseurl}}{{ subitem.url }}">{{ subitem.title }}</a>
+
+{% endfor %}
+
+{% else %}
+
+<a class="nav-link" href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
+
+{% endif %}
+
+{% endfor %} -->

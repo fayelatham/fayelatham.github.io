@@ -1,14 +1,10 @@
-- name: HOME
-  link: /
-- name: ABOUT
-  subfolderitems:
-    - name: Biography
-      link: /about
-    - name: Publications
-      link: /publications
-- name: WORK
-  subfolderitems:
-    - name: Poetry
-      link: /poetry
-    - name: Visual Poetry
-      link: /visual-poetry
+- title: Projects
+  url: /projects
+  type: submenu
+  pages:
+    - title: British Mountaineers
+      url: /projects/british-mountaineers
+    - title: Castle of Imagination
+      url: /projects/castle-of-imagination
+- title: Contact
+  url: /contact
