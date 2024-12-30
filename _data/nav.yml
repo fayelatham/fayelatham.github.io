@@ -1,0 +1,10 @@
+- title: Projects
+  url: /projects
+  type: submenu
+  pages:
+    - title: British Mountaineers
+      url: /projects/british-mountaineers
+    - title: Castle of Imagination
+      url: /projects/castle-of-imagination
+- title: Contact
+  url: /contact
