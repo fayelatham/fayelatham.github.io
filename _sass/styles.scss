@@ -35,8 +35,21 @@ header {
 header .title {
     @extend .text-decoration-none;
     color: $frl-red !important;
-    font-size: 36pt;
+    font-size: 1em;
 }
+
+@media only screen and (max-width: 600px) {
+    header .title {
+        font-size: 1em; // you can also use px here...
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header .title {
+        font-size: 2.5em !important; // you can also use px here...
+    }
+}
+
 
 header > nav > button {
     @extend .mx-3;

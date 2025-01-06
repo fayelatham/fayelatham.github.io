@@ -8,13 +8,16 @@ layout: default
             <p>
                 Faye Latham's collection, British Mountaineers, is a series of poetic erasures. Written in 1942, F. S. Smythe's biographical text of the same title forms the original canvas where words are picked, painted and stitched together to create a new, dream-like narrative.
             </p>
+            <p>
+                Drag the images left or right to see more pages.
+            </p>
         </div>
     </div>
     <div class="row mb-3">
     <div class="owl-carousel" id="bm-carousel">
         {% for book in site.data.british-mountaineers %}
         <div class="item">
-            <a href="#viewerModal" data-bs-target="#viewerModal" data-bs-toggle="modal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
+            <a href="#viewerModal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
         </div>
         {% endfor %}
     </div>
@@ -31,7 +34,7 @@ layout: default
     <div class="owl-carousel" id="ci-carousel">
         {% for book in site.data.castle-of-imagination %}
         <div class="item">
-            <a href="#viewerModal" data-bs-target="#viewerModal" data-bs-toggle="modal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
+            <a href="#viewerModal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
         </div>
         {% endfor %}
     </div>
@@ -59,6 +62,19 @@ layout: default
 </div>
 <script>
     $('document').ready(function () {
+
+        const timeout = 100
+
+        dragEnd = 0
+
+        onDrag = function () {
+            console.log("drag start " + Date.now())
+            dragEnd = Date.now()
+        }
+
+        onDragged = function () {
+            console.log("drag end " + Date.now())
+        }
         
         // Create carousels
         $('#bm-carousel').owlCarousel({
@@ -72,7 +88,9 @@ layout: default
                 600 : {
                     items : 3
                 }
-            }
+            },
+            onDrag : onDrag,
+            onDragged : onDragged
         });
         $('#ci-carousel').owlCarousel({
             loop : true,
@@ -85,29 +103,57 @@ layout: default
                 600 : {
                     items : 3
                 }
-            }
+            },
+            onDrag : onDrag,
+            onDragged : onDragged
         });
+
+        const viewerModalObj = new bootstrap.Modal('#viewerModal', {
+        })
+        viewerModalObj.hide()
+
+        $('#bm-carousel div.item a').click(function () {
+            console.log("clicked")
+            if (Date.now() - dragEnd < timeout) {
+                console.log("Busy")
+                // viewerModalObj.hide()
+                return
+            } else {
+                viewerModalObj.show($(this)[0])
+            }
+        })
+
+
+        $('#ci-carousel div.item a').click(function () {
+            console.log("clicked")
+            if (Date.now() - dragEnd < timeout) {
+                console.log("Busy")
+                // viewerModalObj.hide()
+                return
+            } else {
+                viewerModalObj.show($(this)[0])
+            }
+        })
 
         // Hook events to modal/viewer
         const viewerModal = document.getElementById('viewerModal')
         viewerModal.addEventListener(
             'show.bs.modal', event => {
+
+                console.log("owl show " + Date.now())
+                console.log("-------> " + (Date.now() - dragEnd))
+
                 // Loading parameters
                 const viewer_title = event.relatedTarget.dataset.viewer
                 const viewer_shopurl = event.relatedTarget.dataset.viewershopurl
                 const viewer_filename = event.relatedTarget.dataset.viewerlarge
 
-                console.log("Loading " + viewer_title + "(" + viewer_filename + ", " + viewer_shopurl +")")
-
                 // Set parameters in modal
                 $('#viewerModal div.modal-body > img').attr("src", viewer_filename)
 
-                console.log($('#viewerModal div.modal-footer > a.buy-print'))
                 $('#viewerModal div.modal-footer > a.buy-print').attr("href", viewer_shopurl)
                 $('#viewerModal div.modal-header > h1.modal-title').text(viewer_title)
-
-                console.log("Assigned values...")
-
+                
             }
         )
 
