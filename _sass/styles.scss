@@ -5,6 +5,11 @@ $font-size-root: 1.25rem;
 
 $serif-font-family: "DM Serif Text", "Times New Roman", serif;
 
+// Reset H1 font
+h1 {
+    font-family: $serif-font-family;
+}
+
 // Rewrite colours
 $primary: $frl-red;
 

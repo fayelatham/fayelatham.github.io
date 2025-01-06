@@ -1,0 +1,115 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>British Mountaineers</h2>
+            <p>
+                Faye Latham's collection, British Mountaineers, is a series of poetic erasures. Written in 1942, F. S. Smythe's biographical text of the same title forms the original canvas where words are picked, painted and stitched together to create a new, dream-like narrative.
+            </p>
+        </div>
+    </div>
+    <div class="row mb-3">
+    <div class="owl-carousel" id="bm-carousel">
+        {% for book in site.data.british-mountaineers %}
+        <div class="item">
+            <a href="#viewerModal" data-bs-target="#viewerModal" data-bs-toggle="modal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Castle of Imagination</h2>
+            <p>
+                First published in 1930, F. S. Smythe's book, A Kangchenjunga Adventure, becomes the canvas for this series of erasure and collage poems. This series explores both real and imagined landscapes, taking the reader on a journey into the text through visual and lexical portals, black holes and dreams.
+            </p>
+        </div>
+    </div>
+    <div class="row mb-3">
+    <div class="owl-carousel" id="ci-carousel">
+        {% for book in site.data.castle-of-imagination %}
+        <div class="item">
+            <a href="#viewerModal" data-bs-target="#viewerModal" data-bs-toggle="modal" data-viewer="{{book.title}}" data-viewerlarge="{{book.filename_large}}" data-viewershopurl="{{book.shop_url}}"><img src="{{book.filename_small}}"/></a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="viewerModal" tabindex="-1" aria-labelledby="viewerModel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="viewerModalLabel">An artwork</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="/assets/img/british-mountaineers/lg/1.png" class="w-100"/>
+            </div>
+            <div class="modal-footer">
+                <a href="#" type="button" class="btn btn-primary buy-print disabled">Buy print</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('document').ready(function () {
+        
+        // Create carousels
+        $('#bm-carousel').owlCarousel({
+            loop : true,
+            margin : 32,
+            nav : false,
+            responsive : {
+                0 : {
+                    items : 1
+                },
+                600 : {
+                    items : 3
+                }
+            }
+        });
+        $('#ci-carousel').owlCarousel({
+            loop : true,
+            margin : 32,
+            nav : false,
+            responsive : {
+                0 : {
+                    items : 1
+                },
+                600 : {
+                    items : 3
+                }
+            }
+        });
+
+        // Hook events to modal/viewer
+        const viewerModal = document.getElementById('viewerModal')
+        viewerModal.addEventListener(
+            'show.bs.modal', event => {
+                // Loading parameters
+                const viewer_title = event.relatedTarget.dataset.viewer
+                const viewer_shopurl = event.relatedTarget.dataset.viewershopurl
+                const viewer_filename = event.relatedTarget.dataset.viewerlarge
+
+                console.log("Loading " + viewer_title + "(" + viewer_filename + ", " + viewer_shopurl +")")
+
+                // Set parameters in modal
+                $('#viewerModal div.modal-body > img').attr("src", viewer_filename)
+
+                console.log($('#viewerModal div.modal-footer > a.buy-print'))
+                $('#viewerModal div.modal-footer > a.buy-print').attr("href", viewer_shopurl)
+                $('#viewerModal div.modal-header > h1.modal-title').text(viewer_title)
+
+                console.log("Assigned values...")
+
+            }
+        )
+
+    })
+</script>

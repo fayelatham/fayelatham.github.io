@@ -1,4 +1,5 @@
-<!doctype HTML>
+---
+---
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
@@ -7,32 +8,37 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- add Owl Carousel -->
+    <link rel="stylesheet" href="{% link assets/owl.carousel/dist/assets/owl.carousel.min.css %}" />
 
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-    <header>
-        {% include navbar.html %}
+    <header class="container">
+        <div class="title col-12 text-center">
+            <strong>Faye Rhiannon Latham</strong> | Poet
+            {% include nav-buttons.html %}
+        </div>
     </header>
-    <div class="row">
-        <h1>{{ page.title }}</h1>
-    </div>
+    <!-- content -->
+    <content>
     {{ content }}
-    <footer>
-        <div class="footer mt-4">
-            <section>
-                <h6>Copyright</h6>
-                <p class="ms-3">
-                    Faye Rhiannon Latham &copy; 2024<br/>
-                    <small>Web design by <a class="text-reset" href="https://jonohawkins.co.uk">Jono Hawkins</a>
-                </p>  
-            </section>
+    </content>
+    <!-- end content -->
+    <footer class="container">
+        <div class="col-12">
+            <strong>Copyright</strong>
+            <p>Faye Latham &copy; 2024</p>
+            <strong>Design</strong>
+            <p><a href="https://jonohawkins.co.uk">jonohawkins.co.uk</a></p>
         </div>
     </footer>
-    </div>
     <!-- Load JS scripts -->
     <script src="{{ site.baseurl }}/assets/js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="{% link /assets/owl.carousel/dist/owl.carousel.min.js %}"></script>
 </body>
 </html>
